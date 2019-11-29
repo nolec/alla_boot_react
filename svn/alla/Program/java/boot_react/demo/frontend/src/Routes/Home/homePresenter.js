@@ -18,7 +18,7 @@ const Box = styled.div`
   @media screen and (max-width: 768px) {
     align-items: baseline;
   }
-  @media (min-height: 1025px) and (max-height: 1366px) {
+  @media (orientation: portrait) and (max-height: 1366px) {
     align-items: baseline;
   }
 `;
@@ -116,7 +116,7 @@ const BgBox = styled.div`
     opacity: 1;
     position: absolute;
   }
-  @media (min-height: 1025px) and (max-height: 1366px) {
+  @media (orientation: portrait) and (max-height: 1366px) {
     width: 100vw;
     left: 0;
     top: unset;
@@ -134,12 +134,12 @@ const useImageSelector = initialSrc => {
 
   const sensor = event => {
     const {
-      currentTarget: {
-        screen: { width, height }
-      }
+      currentTarget: { innerWidth }
     } = event;
-    if (width <= 768 || height <= 1366) {
+    if (innerWidth <= 1366) {
       setSrc(require("../../assets/alla_mobile.png"));
+    } else {
+      setSrc(require("../../assets/mainBg.png"));
     }
   };
   useEffect(() => {
