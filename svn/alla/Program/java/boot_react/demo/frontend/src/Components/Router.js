@@ -14,8 +14,7 @@ export default () => (
     <Header />
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/m" exact component={Mhome} />
-      <Redirect from="*" to="/" />
+      {/* <Redirect from="*" to="/" /> */}
     </Switch>
   </Router>
 );

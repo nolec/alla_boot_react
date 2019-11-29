@@ -97,7 +97,7 @@ const BgBox = styled.div`
   z-index: -1;
   position: relative;
   right: -15%;
-  width: 70vw;
+  width: 75vw;
   @media (min-width: 768px) and (max-width: 1024px) {
     position: absolute;
     width: 1024px;
@@ -156,7 +156,7 @@ const HomePresenter = () => {
             </Infor>
             <ButtonBox>
               <AndroidBtn
-                href={"http://220.85.65.103:9080/allamanager/download/apk"}
+                href={"http://allaglobal.com/download/alla.apk"}
                 andUrl={require("../../assets/btn_google.svg")}
               />
               <IOSBtn

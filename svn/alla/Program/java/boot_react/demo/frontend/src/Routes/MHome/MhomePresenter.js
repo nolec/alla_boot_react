@@ -65,7 +65,7 @@ const BgBox = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 80% center;
-  width: 360px;
+  width: 400px;
   height: 100%;
   background-image: url(${props => props.BgUrl});
 `;
@@ -84,7 +84,10 @@ const MhomePresenter = () => (
             경험하세요!
           </Infor>
           <ButtonBox>
-            <AndroidBtn andUrl={require("../../assets/google.svg")} />
+            <AndroidBtn
+              href={"http://allaglobal.com/download/alla.apk"}
+              andUrl={require("../../assets/google.svg")}
+            />
             <IOSBtn
               onClick={() => alert("준비중입니다.")}
               iosUrl={require("../../assets/apple.svg")}
