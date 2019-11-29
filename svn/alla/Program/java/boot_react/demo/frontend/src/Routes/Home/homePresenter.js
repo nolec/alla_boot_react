@@ -18,6 +18,9 @@ const Box = styled.div`
   @media screen and (max-width: 768px) {
     align-items: baseline;
   }
+  @media (min-height: 1025px) and (max-height: 1366px) {
+    align-items: baseline;
+  }
 `;
 // ----------------------------------
 const Title = styled.h1`
@@ -98,16 +101,24 @@ const BgBox = styled.div`
   position: relative;
   right: -15%;
   width: 75vw;
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 768px) and (max-width: 1366px) {
     position: absolute;
-    width: 1024px;
+    width: 100vw;
     left: 25%;
     top: 0%;
     opacity: 0.4;
   }
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     width: 100vw;
-    left: 3%;
+    left: 0;
+    top: unset;
+    bottom: -2px;
+    opacity: 1;
+    position: absolute;
+  }
+  @media (min-height: 1025px) and (max-height: 1366px) {
+    width: 100vw;
+    left: 0;
     top: unset;
     bottom: -2px;
     opacity: 1;
@@ -124,10 +135,10 @@ const useImageSelector = initialSrc => {
   const sensor = event => {
     const {
       currentTarget: {
-        screen: { width }
+        screen: { width, height }
       }
     } = event;
-    if (width <= 768) {
+    if (width <= 768 || height <= 1366) {
       setSrc(require("../../assets/alla_mobile.png"));
     }
   };

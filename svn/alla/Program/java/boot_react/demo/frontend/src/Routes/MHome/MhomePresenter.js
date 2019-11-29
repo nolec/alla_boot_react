@@ -14,9 +14,16 @@ const Box = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  @media screen and (max-height: 375px) {
+    align-items: baseline;
+    margin-top: 5%;
+  }
 `;
 const ContentBox = styled.div`
   color: #ffffff;
+  @media screen and (max-height: 375px) {
+    z-index: 1;
+  }
 `;
 const Content = styled.div`
   margin-top: 70px;
@@ -65,9 +72,15 @@ const BgBox = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 80% center;
-  width: 400px;
+  width: 100vw;
   height: 100%;
   background-image: url(${props => props.BgUrl});
+  @media screen and (max-height: 375px) {
+    position: absolute;
+    right: -20%;
+    top: 0;
+    width: 70vw;
+  }
 `;
 const Img = styled.img`
   width: 100%;
