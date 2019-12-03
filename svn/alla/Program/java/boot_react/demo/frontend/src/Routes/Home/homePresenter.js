@@ -159,6 +159,7 @@ const HomePresenter = () => {
       <Box>
         <ContentBox>
           <Title>AllA</Title>
+          <Slink to="/login">Login</Slink>
           <Content>
             <SubTitle>현명한 사람들의 선택, AllA Wallet</SubTitle>
             <Infor>
